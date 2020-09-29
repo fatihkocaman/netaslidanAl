@@ -1,4 +1,75 @@
-<table class="table">
+<head>
+<style>
+.table-bordered > tbody > tr > td {
+    border: 1px solid #e7ecf1;
+    word-break: break-word;
+}
+.table#t01 thead tr:nth-child(even) {
+    background-color: rgb(129, 206, 213) ;
+    color: white;
+}
+.table#t01 thead tr:nth-child(odd) {
+    background-color: rgb(0,152,167);color:white;
+}
+
+.table#t01 tbody tr {
+    background-color: rgb(215, 233, 234);
+}
+
+.table#t01 tbody tr:nth-child(even) {
+    background-color: rgb(224, 241, 245)
+}
+
+.table#t01 tbody tr:nth-child(even):hover {
+    background-color: rgb(195, 224, 230);
+}
+
+.table#t01 tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.table#t01 tbody tr:nth-child(odd):hover {
+    background-color: rgb(195, 224, 230);
+}
+#table-wrapper {
+    position: relative;
+}
+#table-scroll {
+    height: 2000px;
+    overflow: auto;
+    margin-top: 20px;
+}
+</style>
+
+</head>
+<table style="z-index:1" class="table table-striped table-bordered table-hover order-column" id="t01" >
+    <thead>
+        <tr>
+            <th></th>
+            <th>İlan Açıklaması</th>
+            <th>Price</th>
+            <th>Units in Stock</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tempProduct of products">
+            <td>
+                <a routerLink="/products">
+                    <img src="assets/images/logo.png" alt="FAShopping" class="img-responsive">
+                  </a>
+            </td>
+            <td class="align-middle">{{tempProduct.imageUrl}}</td>
+            <td class="align-middle">{{tempProduct.productName}}</td>
+            <td class="align-middle">{{tempProduct.description}}</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+
+<!-- <table class="table">
     <thead class="thead-dark">
         <tr>
             <th></th>
@@ -18,5 +89,5 @@
         </tr>
     </tbody>
 
-</table>
+</table> -->
 
